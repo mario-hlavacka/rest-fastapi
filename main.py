@@ -1,4 +1,4 @@
-
+from contextlib import asynccontextmanager
 from fastapi import FastAPI, HTTPException
 from sqlmodel import select
 
@@ -9,9 +9,11 @@ from models import Post, PostUpdate
 
 app = FastAPI()
 
-@app.on_event("startup")
-def on_startup():
+@asynccontextmanager
+async def lifespan(app: FastAPI):
     create_db_and_tables()
+    yield
+
 
 
 @app.post("/posts/")
