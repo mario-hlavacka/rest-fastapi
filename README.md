@@ -9,6 +9,7 @@ Python version used - 3.13.2
 
 Once the API is running, you can access the documentation at localhost:8000/docs
 
+You can also run all unit tests using `pytest` command
 
 ## Task
 
