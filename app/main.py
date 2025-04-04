@@ -2,9 +2,9 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI, HTTPException
 from sqlmodel import select
 
-from database import SessionDep, create_db_and_tables
-from external_api import get_external_post, is_valid_user
-from models import Post, PostUpdate
+from .database import SessionDep, create_db_and_tables
+from .external_api import get_external_post, is_valid_user
+from .models import Post, PostUpdate
 
 
 app = FastAPI()

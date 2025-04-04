@@ -5,7 +5,7 @@ Python version used - 3.13.2
 1. Create virtual environment `python -m venv .venv`
 2. Activate virtual environment (win) `.venv\Scripts\activate.bat`
 3. Install required dependencies `pip install -r requirements.txt`
-4. Run the API `fastapi dev main.py`
+4. Run the API `fastapi dev app/main.py`
 
 Once the API is running, you can access the documentation at localhost:8000/docs
 
