@@ -1,10 +1,16 @@
+import os
 from typing import Annotated
 from fastapi import Depends
 from sqlmodel import create_engine, SQLModel, Session
 
 
-# DATABASE_URL = os.environ.get("DATABASE_URL") # TODO: extract to env
-DATABASE_URL = 'postgresql://postgres:mysecretpassword@localhost:5432/fastapi'
+DATABASE_HOST = os.environ.get("DATABASE_HOST")
+DATABASE_PORT = os.environ.get("DATABASE_PORT")
+DATABASE_NAME = os.environ.get("DATABASE_NAME")
+DATABASE_USERNAME = os.environ.get("DATABASE_USERNAME")
+DATABASE_PASSWORD = os.environ.get("DATABASE_PASSWORD")
+
+DATABASE_URL = f'postgresql://{DATABASE_USERNAME}:{DATABASE_PASSWORD}@{DATABASE_HOST}:{DATABASE_PORT}/{DATABASE_NAME}'
 engine = create_engine(DATABASE_URL)
 
 

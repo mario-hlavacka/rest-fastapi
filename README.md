@@ -2,14 +2,26 @@
 Python version used - 3.13.2
 
 ## Installation:
+This application require running Postgresql database.
 1. Create virtual environment `python -m venv .venv`
 2. Activate virtual environment (win) `.venv\Scripts\activate.bat`
 3. Install required dependencies `pip install -r requirements.txt`
-4. Run the API `fastapi dev app/main.py`
+4. Create `.env` file including these environment variables:
+```
+DATABASE_HOST=db
+DATABASE_PORT=5432
+DATABASE_NAME=postgres
+DATABASE_USERNAME=postgres
+DATABASE_PASSWORD=mysecretpassword
+```
+5. Run the API `fastapi dev app/main.py`
 
 Once the API is running, you can access the documentation at localhost:8000/docs
 
 You can also run all unit tests using `pytest` command
+
+### Docker
+You can also run the whole application by typing the `docker compose up` command.
 
 ## Task
 

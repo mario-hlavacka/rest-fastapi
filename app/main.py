@@ -7,13 +7,13 @@ from .external_api import get_external_post, is_valid_user
 from .models import Post, PostUpdate
 
 
-app = FastAPI()
-
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     create_db_and_tables()
     yield
 
+
+app = FastAPI(lifespan=lifespan)
 
 
 @app.post("/posts/")
