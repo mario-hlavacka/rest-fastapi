@@ -1,7 +1,7 @@
 import json
 import requests
 
-from models import Post
+from .models import Post
 
 
 USERS_URL = "https://jsonplaceholder.typicode.com/users/"

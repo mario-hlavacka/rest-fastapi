@@ -2,9 +2,9 @@ from fastapi.testclient import TestClient
 import pytest
 from sqlmodel import SQLModel, Session, StaticPool, create_engine
 
-from database import get_session
-from main import app
-from models import Post
+from .database import get_session
+from .main import app
+from .models import Post
 
 
 @pytest.fixture(name="session")
